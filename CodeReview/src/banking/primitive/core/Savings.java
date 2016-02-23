@@ -30,13 +30,17 @@ public class Savings extends Account {
 	 * An account whose balance dips below 0 is in an OVERDRAWN state
 	 */
 	public boolean withdraw(float amount) {
-		if (getState() == State.OPEN && amount > 0.0f) {
+		if (getState() == State.OPEN && amount > 0.0f) 
+		{
 			balance = balance - amount;
 			numWithdraws++;
 			if (numWithdraws > 3)
+			{
 				balance = balance - 1.0f;
+			}
 			// KG BVA: should be < 0
-			if (balance <= 0.0f) {
+			if (balance <= 0.0f) 
+			{
 				setState(State.OVERDRAWN);
 			}
 			return true;
