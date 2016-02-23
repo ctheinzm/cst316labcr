@@ -21,6 +21,8 @@ public class Savings extends Account {
 			if (balance >= 0.0f) {
 				setState(State.OPEN);
 			}
+			//Added by Julian Douglas
+			return true;
 		}
 		return false;
 	}
