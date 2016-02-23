@@ -47,7 +47,7 @@ class MainFrame extends JFrame {
 	}
 
 	
-	private void constructForm() {
+	private void _constructForm() {
 		//*** Make these read from properties
 		typeLabel		= new JLabel(props.getProperty("TypeLabel"));
 		nameLabel		= new JLabel(props.getProperty("NameLabel"));
