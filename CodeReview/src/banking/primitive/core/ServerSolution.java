@@ -45,6 +45,11 @@ class ServerSolution implements AccountServer {
 		}
 	}
 	
+	/**
+	 * creates new account
+	 * @param either Checking or Savings
+	 * @return
+	 */
 	private boolean newAccountFactory(String type, String name, float balance)
 		throws IllegalArgumentException {
 		
@@ -67,7 +72,9 @@ class ServerSolution implements AccountServer {
 		}
 		return true;
 	}
-
+	/**
+	 * used if account starts with negative balance
+	 */
 	public boolean newAccount(String type, String name, float balance) 
 		throws IllegalArgumentException {
 		
@@ -76,6 +83,9 @@ class ServerSolution implements AccountServer {
 		return newAccountFactory(type, name, balance);
 	}
 	
+	/**
+	 * Closes an account
+	 */
 	public boolean closeAccount(String name) {
 		Account acc = accountMap.get(name);
 		if (acc == null) {
@@ -103,13 +113,16 @@ class ServerSolution implements AccountServer {
 		}
 		return result;
 	}
-	
+	/**
+	 * Exports account list into a file
+	 */
 	public void saveAccounts() throws IOException {
 		ObjectOutputStream out = null; 
 		try {
 			out = new ObjectOutputStream(new FileOutputStream(fileName));
 
 			out.writeObject(Integer.valueOf(accountMap.size()));
+			
 			for (int i=0; i < accountMap.size(); i++) {
 				out.writeObject(accountMap.get(i));
 			}
