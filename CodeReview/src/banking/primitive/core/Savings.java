@@ -8,7 +8,7 @@ public class Savings extends Account {
 		super(name);
 	}
 
-	public Savings(String name, float balance) throws IllegalArgumentException {
+	public Savings(String name, float balance) {
 		super(name, balance);
 	}
 
