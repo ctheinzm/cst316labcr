@@ -73,7 +73,7 @@ public abstract class Account implements java.io.Serializable {
      * @return the final string of account and its balance
      */
     public String toString() {
-        return "Account " + name + " has $" + balance + "and is " + getState()
+        return "Account " + name + " has $" + balance + " and is " + getState()
                 + "\n";
     }
 }
